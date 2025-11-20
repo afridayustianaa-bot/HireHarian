@@ -142,14 +142,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const localJobsFormatted = localJobs.map(j => ({
         id: j.id,
-        title: j.title,
-        company: j.name,
+        title: j.title || "Pekerjaan",
+        company: j.name || "Tidak disebutkan",
         location: j.location || "Lokasi tidak ditentukan",
         salary: j.salary || "-",
         type: j.type || "Harian",
-        email: j.email,
-        phone: j.phone,
-        desc: j.description,
+        email: j.email || "-",
+        phone: j.phone || "-",
+        desc: j.description || "",
         foto: j.foto || "https://via.placeholder.com/600x400?text=No+Image"
     }));
 
