@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         salary: j.salary || "-",
         type: j.type || "Harian",
         email: j.email,
-        phone: j.phone
+        phone: j.phone,
         desc: j.description,
         foto: j.foto || "https://via.placeholder.com/600x400?text=No+Image"
     }));
