@@ -204,23 +204,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterLocation = document.getElementById("filterLocation");
     const typeCheckboxes = document.querySelectorAll(".job-type");
 
-    function applyFilters() {
-        const keyword =
-            (mainSearch?.value.toLowerCase() || "") ||
-            (filterLocation?.value.toLowerCase() || "");
+ function applyFilters() {
+    const keyword = (mainSearch?.value.toLowerCase() || "");
+    const locationValue = (filterLocation?.value.toLowerCase() || "");
 
-        const selectedTypes = [...typeCheckboxes]
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
+    const selectedTypes = [...typeCheckboxes]
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
 
-        const filtered = allJobs.filter(job =>
-            (job.title.toLowerCase().includes(keyword) ||
-            job.company.toLowerCase().includes(keyword)) &&
-            (selectedTypes.length === 0 || selectedTypes.includes(job.type))
-        );
-
-        renderJobs(filtered);
-    }
+      const filtered = allJobs.filter(job => {
+          const titleMatch = job.title.toLowerCase().includes(keyword);
+          const companyMatch = job.company.toLowerCase().includes(keyword);
+          const salaryMatch = job.salary.toLowerCase().includes(keyword);
+          const descMatch = job.desc.toLowerCase().includes(keyword);
+  
+          const keywordMatch = titleMatch || companyMatch || salaryMatch || descMatch;
+  
+          const locationMatch =
+              locationValue === "" ||
+              job.location.toLowerCase().includes(locationValue);
+  
+          const typeMatch =
+              selectedTypes.length === 0 ||
+              selectedTypes.includes(job.type);
+  
+          return keywordMatch && locationMatch && typeMatch;
+      });
+  
+      renderJobs(filtered);
+  }
 
     mainSearch?.addEventListener("input", applyFilters);
     filterLocation?.addEventListener("input", applyFilters);
