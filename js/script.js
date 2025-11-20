@@ -204,35 +204,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterLocation = document.getElementById("filterLocation");
     const typeCheckboxes = document.querySelectorAll(".job-type");
 
- function applyFilters() {
-    const keyword = (mainSearch?.value.toLowerCase() || "");
-    const locationValue = (filterLocation?.value.toLowerCase() || "");
-
-    const selectedTypes = [...typeCheckboxes]
-        .filter(cb => cb.checked)
-        .map(cb => cb.value);
-
-      const filtered = allJobs.filter(job => {
-          const titleMatch = job.title.toLowerCase().includes(keyword);
-          const companyMatch = job.company.toLowerCase().includes(keyword);
-          const salaryMatch = job.salary.toLowerCase().includes(keyword);
-          const descMatch = job.desc.toLowerCase().includes(keyword);
-  
-          const keywordMatch = titleMatch || companyMatch || salaryMatch || descMatch;
-  
-          const locationMatch =
-              locationValue === "" ||
-              job.location.toLowerCase().includes(locationValue);
-  
-          const typeMatch =
-              selectedTypes.length === 0 ||
-              selectedTypes.includes(job.type);
-  
-          return keywordMatch && locationMatch && typeMatch;
-      });
-  
-      renderJobs(filtered);
-  }
+    function applyFilters() {
+        const keyword = (mainSearch?.value.toLowerCase() || "");
+        const locationValue = (filterLocation?.value.toLowerCase() || "");
+    
+        const selectedTypes = [...typeCheckboxes]
+            .filter(cb => cb.checked)
+            .map(cb => cb.value.toLowerCase());
+    
+        const filtered = allJobs.filter(job => {
+            const titleMatch   = job.title.toLowerCase().includes(keyword);
+            const companyMatch = job.company.toLowerCase().includes(keyword);
+            const descMatch    = job.desc.toLowerCase().includes(keyword);
+    
+            // salary bisa angka → convert aman ke string dulu
+            const salaryMatch  = job.salary.toString().toLowerCase().includes(keyword);
+    
+            const keywordMatch = (
+                keyword === "" ||
+                titleMatch || companyMatch || descMatch || salaryMatch
+            );
+    
+            // lokasi benar-benar dipisah
+            const locationMatch =
+                locationValue === "" ||
+                job.location.toLowerCase().includes(locationValue);
+    
+            const typeMatch =
+                selectedTypes.length === 0 ||
+                selectedTypes.includes(job.type.toLowerCase());
+    
+            return keywordMatch && locationMatch && typeMatch;
+        });
+    
+        renderJobs(filtered);
+    }
 
     mainSearch?.addEventListener("input", applyFilters);
     filterLocation?.addEventListener("input", applyFilters);
