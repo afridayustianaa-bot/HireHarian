@@ -147,6 +147,8 @@ document.addEventListener("DOMContentLoaded", () => {
         location: j.location || "Lokasi tidak ditentukan",
         salary: j.salary || "-",
         type: j.type || "Harian",
+        email: j.email,
+        phone: j.phone
         desc: j.description,
         foto: j.foto || "https://via.placeholder.com/600x400?text=No+Image"
     }));
