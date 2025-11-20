@@ -168,6 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="text-gray-600 text-sm">${job.company} • ${job.location}</p>
                     <p class="text-sm mt-1"><strong>Gaji:</strong> ${job.salary}</p>
                     <p class="text-sm"><strong>Tipe:</strong> ${job.type}</p>
+                    <p class="text-gray-700 text-sm mt-2">${job.email}</p>
+                    <p class="text-gray-700 text-sm mt-2">${job.phone}</p>
                     <p class="text-gray-700 text-sm mt-2">${job.desc}</p>
                 </div>
 
