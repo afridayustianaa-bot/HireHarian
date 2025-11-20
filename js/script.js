@@ -236,7 +236,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
             return keywordMatch && locationMatch && typeMatch;
         });
-    
+              if (filtered.length === 0) {
+              jobList.innerHTML = `
+                  <div class="no-result">
+                      <p style="text-align:center; padding:20px; color:#888;">
+                          🙁 Tidak ada data yang cocok dengan filter yang kamu pilih.
+                      </p>
+                  </div>
+              `;
+              return;
+          }
         renderJobs(filtered);
     }
 
