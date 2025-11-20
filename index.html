@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireHarian</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 href="index.html" class="text-2xl font-bold text-red-600">🛠️ HireHarian</h1>
+        <!-- Menu -->
+        <nav class="hidden md:flex gap-6 font-medium">
+          <a href="#home" class="hover:text-red-600">Home</a>
+          <a href="#about-us" class="hover:text-red-600">About Us</a>
+          <a href="#tutorial" class="hover:text-red-600">Tutorial</a>
+          <a href="./cari-kerja.html" class="hover:text-red-600">Cari Kerja</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden border p-2 rounded-lg">
+        ☰
+        </button>
+
+        <nav id="mobileMenu" class="hidden md:hidden">
+        <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-red-600">Home</a></li>
+            <li><a href="#about-us" class="hover:text-red-600">About</a></li>
+            <li><a href="#tutorial" class="hover:text-red-600">Tutorial</a></li>
+            <li><a href="./cari-kerja.html" class="hover:text-red-600">Cari Kerja</a></li>
+        </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- home -->
+        <section id="home" class="relative overflow-hidden py-16 md:py-24">
+            <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+                <!-- Text Content -->
+                <div class="space-y-6">
+                <div class="space-y-3">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                    Dapatkan <span style="color:red;">Pekerjaan Harian</span> dengan Cepat
+                    </h1>
+                    <p class="text-lg text-gray-600">
+                    Platform terpercaya yang menghubungkan pekerja lepas dengan pemberi kerja di sekitar Anda. 
+                    Cari pekerjaan atau temukan tenaga kerja profesional dalam hitungan menit.
+                    </p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="./cari-kerja.html" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg flex items-center justify-center text-lg font-medium">
+                    Cari Pekerjaan
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    </a>
+
+                    <a href="./cari-pekerja.html" class="border border-red-600 text-red-600 hover:bg-red-50 px-6 py-3 rounded-lg text-lg font-medium">
+                    Posting Pekerjaan
+                    </a>
+                </div>
+                </div>
+
+                <!-- Home Image -->
+                <div class="relative h-80 md:h-96  rounded-2xl flex items-center justify-center ">
+                <div class="inset-0 bg-gradient-to-br from-blue-50 via-transparent to-indigo-50"></div>
+                <div class="relative text-center">
+                    <img src="asset/home-image.jpg" alt="HireHarian" class="shadow-2xl rounded-lg"/>
+                </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about-us" class="bg-red-600 relative overflow-hidden py-16 md:py-24">
+            <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <!-- About Us Image -->
+            <div class="relative h-80 md:h-96  rounded-2xl flex items-center justify-center ">
+            <div class="inset-0 bg-gradient-to-br from-blue-50 via-transparent to-indigo-50"></div>
+            <div class="relative text-center">
+                <img src="asset/about-us.jpg" alt="HireHarian" class="shadow-white-soft rounded-lg"/>
+            </div>
+            </div>
+            <div class="space-y-3 text-white">
+                <h2 class="text-4xl font-bold leading-tight">Tentang Kami</h2>
+                <p class="text-lg">
+                    HireHarian adalah platform inovatif yang didedikasikan untuk memudahkan pencarian pekerjaan harian dan tenaga kerja profesional di Indonesia. Kami percaya bahwa setiap orang berhak mendapatkan kesempatan kerja yang sesuai dengan kebutuhan mereka, baik itu pekerjaan sehari-hari seperti tukang bangunan, asisten rumah tangga, atau pekerjaan freelance lainnya.
+                </p>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="tutorial" class="relative overflow-hidden py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="space-y-12">
+                <div class="space-y-2">
+                    <h2 class="text-4xl font-bold leading-tight text-center">
+                    Cara Kerja Platform
+                    </h2>
+                    <p class="text-gray-600 text-center">
+                        Proses yang sederhana dan transparan untuk semua pengguna
+                    </p>
+                </div>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <!-- Untuk Pekerja -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6">Untuk Pekerja</h3>
+
+                <div class="space-y-6">
+
+                    <!-- 1 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">
+                            1
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Cari Pekerjaan</h4>
+                            <p class="text-gray-600">
+                                Jelajahi daftar pekerjaan yang tersedia di sekitar Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">
+                            2
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Lamar Pekerjaan</h4>
+                            <p class="text-gray-600">
+                                Lamar pekerjaan yang sesuai dengan keahlian Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Konfirmasi Pekerjaan</h4>
+                            <p class="text-gray-600">
+                                Komunikasikan detail pekerjaan dengan pemberi kerja.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">
+                            4
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Kerjakan & Selesaikan</h4>
+                            <p class="text-gray-600">
+                                Selesaikan pekerjaan sesuai kesepakatan dan dapatkan bayaran.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Untuk Pemberi Kerja -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6">Untuk Pemberi Kerja</h3>
+
+                <div class="space-y-6">
+
+                    <!-- 1 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-green-600 text-white font-bold">
+                            1
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Posting Pekerjaan</h4>
+                            <p class="text-gray-600">
+                                Jelaskan detail pekerjaan, lokasi, dan budget yang Anda tawarkan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-green-600 text-white font-bold">
+                            2
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Kelola Pekerjaan</h4>
+                            <p class="text-gray-600">
+                                Pantau dan kelola pekerjaan yang telah diposting.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-green-600 text-white font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Konfirmasi Pekerja</h4>
+                            <p class="text-gray-600">
+                                Konfirmasi pekerja yang dipilih berdasarkan kesesuaian dengan pekerjaan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 flex items-center justify-center rounded-full bg-green-600 text-white font-bold">
+                            4
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Bayar Sesuai Kesepakatan</h4>
+                            <p class="text-gray-600">
+                                Lakukan pembayaran sesuai dengan kesepakatan yang telah disetujui setelah pekerjaan selesai.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid #ddd; padding: 20px 0; text-align: center;">
+        <p style="color: #666; font-size: 14px;">@ 2025 HireHarian - "Fast hiring for everyday jobs."</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

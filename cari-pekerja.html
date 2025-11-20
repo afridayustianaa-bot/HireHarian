@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posting Pekerjaan - HireHarian</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-red-600">🛠️ HireHarian</a>
+        <!-- Menu -->
+        <nav class="hidden md:flex gap-6 font-medium">
+          <a href="./index.html" class="hover:text-red-600">Home</a>
+          <a href="./index.html" class="hover:text-red-600">About Us</a>
+          <a href="./index.html" class="hover:text-red-600">Tutorial</a>
+          <a href="./cari-kerja.html" class="hover:text-red-600">Cari Kerja</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden border p-2 rounded-lg">
+        ☰
+        </button>
+
+        <nav id="mobileMenu" class="hidden md:hidden">
+        <ul class="space-y-2">
+            <li><a href="./index.html" class="hover:text-red-600">Home</a></li>
+            <li><a href="./index.html" class="hover:text-red-600">About</a></li>
+            <li><a href="./index.html" class="hover:text-red-600">Tutorial</a></li>
+            <li><a href="./cari-kerja.html" class="hover:text-red-600">Cari Kerja</a></li>
+        </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 pt-28 pb-16">
+    <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Kelola Pekerjaan Anda</h1>
+      <nav class="flex gap-4">
+        <button onclick="openMyJobs()"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+            Pekerjaan Saya
+        </button>
+      </nav>
+    </div>
+
+    <!-- FORM POSTING -->
+    <section id="form" class="tab-content active bg-white p-6 rounded-xl shadow-lg mb-8">
+      <h2 class="text-xl font-bold mb-4 text-red-600">Posting Pekerjaan Baru</h2>
+      <form id="jobForm" enctype="multipart/form-data" class="space-y-4">
+        <input type="text" id="title" name="title" placeholder="Nama Pekerjaan" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+        <div class="p-3 border border-gray-300 rounded-lg bg-gray-50">
+            <label for="foto" class="block text-sm font-medium text-gray-700 mb-2">Foto/Ilustrasi Pekerjaan (Opsional)</label>
+            <input type="file" id="foto" name="foto" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100">
+        </div>
+        <input type="text" id="name" name="name" placeholder="Nama Pemilik Pekerjaan" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+        <input type="email" id="email" name="email" placeholder="Email Kontak" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+        <textarea id="description" name="description" placeholder="Deskripsi Pekerjaan (Detail tugas, lokasi, dll.)" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500"></textarea>
+        <label class="font-medium block mb-1">Tipe Pekerjaan</label>
+        <select id="type" class="p-3 border border-gray-300 rounded-lg w-full">
+            <option value="">Pilih tipe pekerjaan</option>
+            <option>Harian</option>
+            <option>Lepas</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+        </select>
+        <!-- Lokasi -->
+        <label class="font-medium block mb-1">Lokasi Pekerjaan</label>
+        <input list="lokasiList" id="location" 
+              class="p-3 border border-gray-300 rounded-lg w-full"
+              placeholder="Pilih atau ketik lokasi...">
+
+        <datalist id="lokasiList">
+            <!-- Jawa -->
+            <option>Jakarta</option>
+            <option>Bandung</option>
+            <option>Surabaya</option>
+            <option>Semarang</option>
+            <option>Yogyakarta</option>
+            <option>Malang</option>
+            <option>Bogor</option>
+            <option>Depok</option>
+            <option>Bekasi</option>
+            <option>Tangerang</option>
+
+            <!-- Sumatra -->
+            <option>Medan</option>
+            <option>Padang</option>
+            <option>Pekanbaru</option>
+            <option>Palembang</option>
+
+            <!-- Bali & Nusa Tenggara -->
+            <option>Denpasar</option>
+            <option>Mataram</option>
+
+            <!-- Kalimantan -->
+            <option>Balikpapan</option>
+            <option>Banjarmasin</option>
+            <option>Samarinda</option>
+
+            <!-- Sulawesi -->
+            <option>Makassar</option>
+            <option>Manado</option>
+
+            <!-- Papua -->
+            <option>Jayapura</option>
+        </datalist>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" id="salary" name="salary" placeholder="Gaji (Contoh: Rp 150.000/hari)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+            <input type="text" id="duration" name="duration" placeholder="Durasi (Contoh: 1 hari, 3 jam)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+        </div>
+        <input type="tel" id="phone" name="phone" placeholder="Nomor Telepon/WhatsApp" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+        
+        <input type="password" id="pin" name="pin" placeholder="PIN Rahasia (Untuk Hapus/Edit)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-semibold transition duration-150">
+            Posting Pekerjaan
+        </button>
+      </form>
+      <p id="alert" class="text-red-500 mt-4 text-center font-medium"></p>
+    </section>
+
+    <!-- LIST PEKERJAAN -->
+    <section id="list" class="tab-content bg-white p-6 rounded-xl shadow-lg">
+      <h2 class="text-xl font-bold mb-4 text-blue-600">Daftar Pekerjaan Saya</h2>
+      <div id="jobList" class="space-y-4">
+        <!-- Daftar pekerjaan akan dirender di sini oleh script.js -->
+      </div>
+    </section>
+  </main>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid #ddd; padding: 20px 0; text-align: center;">
+        <p style="color: #666; font-size: 14px;">@ 2025 HireHarian - "Fast hiring for everyday jobs."</p>
+    </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

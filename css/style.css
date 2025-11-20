@@ -1,0 +1,200 @@
+.main-header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    padding: 12px 30px;
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color:  #f77a14;
+}
+#nav-menu {
+  display: flex;
+  gap: 30px;
+  align-items: left;
+}
+#menu-toggle {
+  display: none; 
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  padding: 20px;
+}
+
+/* Tabs */
+.tabs {
+  margin-top: 90px;
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 15px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.tab.active {
+  background: #d32f2f;
+  color: white;
+}
+
+/* Content Section */
+.tab-content {
+  display: none;
+  margin-top: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* image */
+.shadow-white-soft {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Form Elements */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Job List */
+.job-item {
+  background: white;
+  padding: 15px;
+  border-left: 4px solid #d32f2f;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Alert Info */
+#alert {
+  margin-top: 10px;
+  font-weight: bold;
+}
+style{
+        margin-top:15px;
+        padding:12px 16px;
+        background:#d32f2f;
+        color:white;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+}
+ .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+/* Container grid untuk daftar pekerjaan */
+#jobList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Card item pekerjaan */
+.job-item {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #dc2626;
+    transition: transform .2s;
+}
+
+.job-item:hover {
+    transform: translateY(-4px);
+}
+
+/* Gambar */
+.job-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Tombol hapus */
+.delete-btn {
+    margin-top: 10px;
+    background: #dc2626;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.job-input {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    height: auto;
+    width: 100%;
+    background: white;
+}
+.job-sidebar {
+    border: 1px solid #e5e7eb;
+}
+.job-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    transition: 0.2s;
+}
+.job-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.job-detail-btn {
+    color: #d32f2f;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+.dua-warna {
+    background: linear-gradient(to bottom, #ff6b6b 50%, #4d96ff 50%);
+}
