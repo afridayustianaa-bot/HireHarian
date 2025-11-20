@@ -32,7 +32,7 @@ function saveJob(event) {
             phone: document.getElementById("phone").value,
             pin: document.getElementById("pin")?.value || "",
             foto: fotoBase64 || "",
-            title: document.getElementById("title")?.value || "Pekerjaan"
+            title: document.getElementById("title")?.value || "Pekerjaan",
             type: document.getElementById("type")?.value || "Harian"
         };
 
