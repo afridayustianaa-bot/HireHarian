@@ -33,6 +33,7 @@ function saveJob(event) {
             pin: document.getElementById("pin")?.value || "",
             foto: fotoBase64 || "",
             title: document.getElementById("title")?.value || "Pekerjaan"
+            type: document.getElementById("type")?.value || "Harian"
         };
 
         jobs.push(job);
