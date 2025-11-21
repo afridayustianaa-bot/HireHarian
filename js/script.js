@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
             jobGrid.innerHTML = `
                 <div class="no-result">
                     <p style="text-align:center; padding:20px; color:#888;">
-                        🙁 Tidak ada data yang cocok dengan filter yang kamu pilih.
+                        Data tidak ditemukan.
                     </p>
                 </div>
             `;
